@@ -4,13 +4,9 @@ import App from './App.jsx'
 import './app.css'
 import { registerSW } from 'virtual:pwa-register'
 
-/**
- * Registra el Service Worker (vite-plugin-pwa).
- * autoUpdate ya está en vite.config -> registerType: 'autoUpdate'
- */
+
 registerSW({
   onNeedRefresh() {
-    // Cuando haya nueva versión, opción simple:
     if (confirm('Hay una actualización disponible. ¿Actualizar ahora?')) {
       location.reload()
     }
